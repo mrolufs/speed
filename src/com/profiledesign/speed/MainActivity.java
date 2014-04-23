@@ -149,6 +149,90 @@ public class MainActivity extends Activity {
 		spinnerHeadsetCap.setAdapter(arrayHeadsetAdapter);
 //		renderBikeStackPicker();
 //		renderBikeReachPicker();
+		
+		/*
+		 
+		 
+		 
+		 ZBS Series
+
+Bike Stack: 600
+
+Bike Reach: 407
+
+Armrest Stack: 700
+
+Armrest Reach: 420
+
+Stem Angle: 6
+
+Stem Length: 100
+
+Spacers: 0
+
+Headset Cap: 0
+
+ 
+
+T+ Aluminum Series
+
+Bike Stack: 590
+
+Bike Reach: 405
+
+Armrest Stack: 720
+
+Armrest Reach: 410
+
+Stem Angle: -10
+
+Stem Length: 100
+
+Spacers: 5
+
+Headset Cap: 10
+
+ 
+
+T+ Carbon Series
+
+Bike Stack: 545
+
+Bike Reach: 380
+
+Armrest Stack: 690
+
+Armrest Reach: 395
+
+Stem Angle: 17
+
+Stem Length: 90
+
+Spacers: 10
+
+Headset Cap: 5
+
+ 
+
+T+ Carbon Series and Aeria
+
+Bike Frame Stack: 545
+
+Bike Frame Reach: 405
+
+Armrest Stack: 665
+
+Armrest Reach: 455
+
+Stem Angle: -17
+
+Stem Length: 100
+
+Spacers: 10
+
+Headset Cap: 5
+		 
+		 */
 	
 	}
 	
@@ -231,11 +315,11 @@ public class MainActivity extends Activity {
 
 	}
 	
-//	Bike Frame Stack: every number between 450 Ð 700
+//	Bike Frame Stack: every number between 450 ï¿½ 700
 //
-//    Bike Frame Reach: every number between 300 Ð 500
+//    Bike Frame Reach: every number between 300 ï¿½ 500
 //
-//    Armrest Stack: every number between 400 Ð 900
+//    Armrest Stack: every number between 400 ï¿½ 900
 //
 //    Armrest Reach: every number between 200 - 600
 
@@ -250,13 +334,21 @@ public class MainActivity extends Activity {
 		Results results = calculate();
 		
 		if(results != null){
+			
+			Evaluate.evaluate(results.getAerobarStack(), results.getAerobarReach());
+			
+			if(Evaluate.getTFamily().size() > 2){
+				//do something
+			}else{
+				Intent intent = new Intent(this, ResultsActivity.class);
+				
+				intent.putExtra("aerobarStack", Integer.toString(results.getAerobarStack()));
+				intent.putExtra("aerobarReach", Integer.toString(results.getAerobarReach()));
+				
+				startActivity(intent);
+			}
 		
-			Intent intent = new Intent(this, ResultsActivity.class);
-			
-			intent.putExtra("aerobarStack", Integer.toString(results.getAerobarStack()));
-			intent.putExtra("aerobarReach", Integer.toString(results.getAerobarReach()));
-			
-			startActivity(intent);
+
 		}
 	}
 	
@@ -267,15 +359,17 @@ public class MainActivity extends Activity {
 		//get form values
 		
 		try{
-			bikeStack = Integer.parseInt(((EditText) findViewById(R.id.bike_frame_stack_edit)).getText().toString());
-			bikeReach = Integer.parseInt(((EditText) findViewById(R.id.bike_frame_reach_edit)).getText().toString());
-			fitStack = Integer.parseInt(((EditText) findViewById(R.id.fit_stack_edit)).getText().toString());
-			fitReach = Integer.parseInt(((EditText) findViewById(R.id.fit_reach_edit)).getText().toString());
-			stemAngle = (Integer) spinnerStemAngle.getSelectedItem();//Integer.parseInt(((EditText) findViewById(R.id.stem_angle_edit)).getText().toString());
-			spacers = (Float) spinnerSpacers.getSelectedItem();//Integer.parseInt(((EditText) findViewById(R.id.spacers_edit)).getText().toString());
-			stemLength = (Integer) spinnerStemLength.getSelectedItem();
-			headset = (Integer) spinnerHeadsetCap.getSelectedItem();
+//			bikeStack = Integer.parseInt(((EditText) findViewById(R.id.bike_frame_stack_edit)).getText().toString());
+//			bikeReach = Integer.parseInt(((EditText) findViewById(R.id.bike_frame_reach_edit)).getText().toString());
+//			fitStack = Integer.parseInt(((EditText) findViewById(R.id.fit_stack_edit)).getText().toString());
+//			fitReach = Integer.parseInt(((EditText) findViewById(R.id.fit_reach_edit)).getText().toString());
+//			stemAngle = (Integer) spinnerStemAngle.getSelectedItem();//Integer.parseInt(((EditText) findViewById(R.id.stem_angle_edit)).getText().toString());
+//			spacers = (Float) spinnerSpacers.getSelectedItem();//Integer.parseInt(((EditText) findViewById(R.id.spacers_edit)).getText().toString());
+//			stemLength = (Integer) spinnerStemLength.getSelectedItem();
+//			headset = (Integer) spinnerHeadsetCap.getSelectedItem();
 			
+			/*  ZBS Series */
+//			
 //			bikeStack = 600;//Integer.parseInt(((EditText) findViewById(R.id.bike_frame_stack_edit)).getText().toString());
 //			bikeReach = 407;//Integer.parseInt(((EditText) findViewById(R.id.bike_frame_reach_edit)).getText().toString());
 //			fitStack = 700;//Integer.parseInt(((EditText) findViewById(R.id.fit_stack_edit)).getText().toString());
@@ -284,6 +378,41 @@ public class MainActivity extends Activity {
 //			spacers = 0;//Integer.parseInt(((EditText) findViewById(R.id.spacers_edit)).getText().toString());
 //			stemLength = 100;//(Integer) spinnerStemLength.getSelectedItem();
 //			headset = 0;
+			
+			/* T+ Aluminum Series */
+
+			
+//			bikeStack = 590;//Integer.parseInt(((EditText) findViewById(R.id.bike_frame_stack_edit)).getText().toString());
+//			bikeReach = 405;//Integer.parseInt(((EditText) findViewById(R.id.bike_frame_reach_edit)).getText().toString());
+//			fitStack = 720;//Integer.parseInt(((EditText) findViewById(R.id.fit_stack_edit)).getText().toString());
+//			fitReach = 410;//Integer.parseInt(((EditText) findViewById(R.id.fit_reach_edit)).getText().toString());
+//			stemAngle = -10;//(Integer) spinnerStemAngle.getSelectedItem();//Integer.parseInt(((EditText) findViewById(R.id.stem_angle_edit)).getText().toString());
+//			spacers = 5;//Integer.parseInt(((EditText) findViewById(R.id.spacers_edit)).getText().toString());
+//			stemLength = 100;//(Integer) spinnerStemLength.getSelectedItem();
+//			headset = 10;
+			
+			/* T+ Carbon Series */
+
+			bikeStack = 545;//Integer.parseInt(((EditText) findViewById(R.id.bike_frame_stack_edit)).getText().toString());
+			bikeReach = 380;//Integer.parseInt(((EditText) findViewById(R.id.bike_frame_reach_edit)).getText().toString());
+			fitStack = 690;//Integer.parseInt(((EditText) findViewById(R.id.fit_stack_edit)).getText().toString());
+			fitReach = 395;//Integer.parseInt(((EditText) findViewById(R.id.fit_reach_edit)).getText().toString());
+			stemAngle = 17;//(Integer) spinnerStemAngle.getSelectedItem();//Integer.parseInt(((EditText) findViewById(R.id.stem_angle_edit)).getText().toString());
+			spacers = 10;//Integer.parseInt(((EditText) findViewById(R.id.spacers_edit)).getText().toString());
+			stemLength = 90;//(Integer) spinnerStemLength.getSelectedItem();
+			headset = 5;
+			
+			/* T+ Carbon Series and Aeria */
+
+			
+//			bikeStack = 545;//Integer.parseInt(((EditText) findViewById(R.id.bike_frame_stack_edit)).getText().toString());
+//			bikeReach = 405;//Integer.parseInt(((EditText) findViewById(R.id.bike_frame_reach_edit)).getText().toString());
+//			fitStack = 665;//Integer.parseInt(((EditText) findViewById(R.id.fit_stack_edit)).getText().toString());
+//			fitReach = 455;//Integer.parseInt(((EditText) findViewById(R.id.fit_reach_edit)).getText().toString());
+//			stemAngle = -17;//(Integer) spinnerStemAngle.getSelectedItem();//Integer.parseInt(((EditText) findViewById(R.id.stem_angle_edit)).getText().toString());
+//			spacers = 10;//Integer.parseInt(((EditText) findViewById(R.id.spacers_edit)).getText().toString());
+//			stemLength = 100;//(Integer) spinnerStemLength.getSelectedItem();
+//			headset = 5;
 			
 //			bikeStack = 600;//Integer.parseInt(((EditText) findViewById(R.id.bike_frame_stack_edit)).getText().toString());
 //			bikeReach = 407;//Integer.parseInt(((EditText) findViewById(R.id.bike_frame_reach_edit)).getText().toString());
