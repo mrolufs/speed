@@ -1,6 +1,7 @@
 package com.speed.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Product implements Serializable {
 	
@@ -15,12 +16,37 @@ public class Product implements Serializable {
 		this.product = product;
 	}
 	
+	public Product getProduct(){
+		return product;
+	}
+
+	
 	public String getDescription(){
 		return this.description;
 	}
 	
 	public void setDescription(String description){
 		this.description += " " + description;
+	}
+	
+	public String getDescriptionRecursive(){
+		return getDescription() + recursiveDescription(getProduct());
+	}
+	
+	private String recursiveDescription(Product product){
+
+		//description += product.getDescription();
+		
+		String desc = "";
+		
+		if(product.getProduct() != null){
+			desc = product.getDescription();
+			desc += recursiveDescription(product.getProduct());
+			
+			
+		}
+		
+		return desc;
 	}
 
 }

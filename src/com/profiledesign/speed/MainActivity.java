@@ -21,6 +21,8 @@ import android.widget.Spinner;
 
 public class MainActivity extends Activity {
 	
+	AppContext appContext;
+	
 	int bikeStack = 0;
 	int bikeReach = 0;
 	int fitStack = 0;
@@ -73,7 +75,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		
 		
-		
+		appContext = ((AppContext) getApplicationContext());
 		
 		((EditText) findViewById(R.id.bike_frame_stack_edit)).setOnKeyListener(new OnKeyListener() {
 			
@@ -333,18 +335,24 @@ Headset Cap: 5
 	public void submitClickHandler(View target){
 		Results results = calculate();
 		
+		
+		
 		if(results != null){
 			
-			Evaluate.evaluate(results.getAerobarStack(), results.getAerobarReach());
+			appContext.setStack(results.getAerobarStack());
+			appContext.setReach(results.getAerobarReach());
+			
+			Evaluate evaluator = new Evaluate(this);
+			
+			evaluator.evaluate(results.getAerobarStack(), results.getAerobarReach());
 			
 			if(Evaluate.getTFamily().size() > 2){
-				//do something
+				Intent intent = new Intent(this, TFamilyFilterActivity.class);
+
+				startActivity(intent);
 			}else{
 				Intent intent = new Intent(this, ResultsActivity.class);
-				
-				intent.putExtra("aerobarStack", Integer.toString(results.getAerobarStack()));
-				intent.putExtra("aerobarReach", Integer.toString(results.getAerobarReach()));
-				
+
 				startActivity(intent);
 			}
 		

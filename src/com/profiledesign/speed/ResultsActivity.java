@@ -45,14 +45,14 @@ public class ResultsActivity extends Activity {
 		
 		Bundle b = getIntent().getExtras();
 		
-		stack = Integer.parseInt(b.getString("aerobarStack"));
-		reach = Integer.parseInt(b.getString("aerobarReach"));
+		stack = b.getInt("aerobarStack");
+		reach = b.getInt("aerobarReach");
 		
 		((TextView)findViewById(R.id.aerobar_stack_result)).setText(String.valueOf(stack));
 		((TextView)findViewById(R.id.aerobar_reach_result)).setText(String.valueOf(reach));
 		
 		
-		new Generate(this, productContainer, stack, reach);
+		//new Generate(this, productContainer, stack, reach);
 		
 	}
 

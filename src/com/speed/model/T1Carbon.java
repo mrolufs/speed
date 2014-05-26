@@ -11,6 +11,7 @@ public class T1Carbon extends Product{
 
 	public T1Carbon(Product product){
 		
+		super(product);
 		this.setDescription(product.getDescription() + " T1Carbon");
 		
 	}

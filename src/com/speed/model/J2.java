@@ -1,14 +1,14 @@
 package com.speed.model;
 
-public class F19 extends Product{
+public class J2 extends Product{
 	
-	private String description = "F19";
+	private String description = "J2";
 	
-	public F19(){
+	public J2(){
 		
 	}
 
-	public F19(Product product){
+	public J2(Product product){
 		super(product);
 		this.setDescription(product.getDescription() + description);
 	}

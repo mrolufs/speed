@@ -9,7 +9,8 @@ public class F25 extends Product{
 	}
 
 	public F25(Product product){
-		
+		super(product);
+		this.setDescription(product.getDescription() + description);
 	}
 
 }
