@@ -5,20 +5,29 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.speed.model.F35;
+import com.speed.model.Aeria;
 import com.speed.model.Product;
 import com.speed.model.T1Carbon;
+import com.speed.model.T1Plus;
+import com.speed.model.T2Carbon;
+import com.speed.model.T2Plus;
+import com.speed.model.T3Carbon;
+import com.speed.model.T3Plus;
+import com.speed.model.T4Carbon;
+import com.speed.model.T4Plus;
 
 public class Generate {
 	
@@ -32,6 +41,10 @@ public class Generate {
 	int stack;
 	int reach;
 	
+	AppContext appContext;
+	
+	ArrayList<Product> products;
+	
 	
 	
 	public Generate(Context context, LinearLayout productContainer, int stack, int reach){
@@ -41,7 +54,11 @@ public class Generate {
 		this.stack = stack;
 		this.reach = reach;
 		
-		//evaluate();
+		appContext = (AppContext) context.getApplicationContext();
+		
+		products = appContext.getProducts();
+		
+		generate();
 		
 	}
 	
@@ -52,26 +69,26 @@ public class Generate {
 				"Gloss UD Carbon", "Forged 6061-T6 AL, High-Modulus Carbon Fiber Wing", "F-25", "UD Carbon Fiber", "663 grams");
 	}
 	
-	private void t1PlusCarbon(){
+	private void t1Carbon(){
 		generateProduct("T1 Plus Carbon", PRODUCT_PATH + CARBON_AEROBARS_PATH + "t1-plus-viper.html",
 				IMAGES_PATH + "pd_aerobar_t1_viper_black_angle_RHCVT11.jpg",
 				"The original ergonomic extension bend provides multiple hand positions while aero. With 8 points of adjustment, the J4 Bracket on our T+ Carbon models fine-tunes to the millimeter to optimize the aero position.  The range of stack goes from 60mm to 95mm to the armrest using our Aerobar Bracket Riser Kit. ",
 				"Gloss UD Carbon or White", "Forged 6061-T6 AL brackets", "F-35 adjustable armrest", "Forged 6061-T6 AL brackets", "590 grams");
 	}
 	
-	private void t2PlusCarbon(){
+	private void t2Carbon(){
 		generateProduct("T2 Plus Carbon", PRODUCT_PATH + CARBON_AEROBARS_PATH + "t2-plus-carbon.html",
 				IMAGES_PATH + "pd_aerobar_t2_carbon_black_angle_RHCT21.jpg","The T2+ allows for the most aggressive, low profile position within the T+ Carbon Series. With 8 points of adjustment, the J4 Bracket on our T+ Carbon models fine-tunes to the millimeter to optimize the aero position.  The range of stack goes from 60mm to 95mm to the armrest using our Aerobar Bracket Riser Kit.",
 				"Gloss UD Carbon or White", "Forged 6061-T6 AL brackets", "F-35 adjustable armrest", "Forged 6061-T6 AL brackets", "584 grams");
 	}
 	
-	private void t3PlusCarbon(){
+	private void t3Carbon(){
 		generateProduct("T3 Plus Carbon", PRODUCT_PATH + CARBON_AEROBARS_PATH + "t3-plus-carbon.html",
 				IMAGES_PATH + "pd_aerobar_t3_carbon_black_angle_RHCT31.jpg","The low profile, ergonomic bend of the T3+ keeps wrists in a neutral, more natural position while aero. With 8 points of adjustment, the J4 Bracket on our T+ Carbon models fine-tunes to the millimeter to optimize the aero position.  The range of stack goes from 60mm to 95mm to the armrest using our Aerobar Bracket Riser Kit.",
 				"Gloss UD Carbon or White", "Forged 6061-T6 AL brackets", "F-35 adjustable armrest", "Forged 6061-T6 AL brackets", "620 grams");
 	}
 	
-	private void t4PlusCarbon(){
+	private void t4Carbon(){
 		generateProduct("T4 Plus Carbon", PRODUCT_PATH + CARBON_AEROBARS_PATH + "t4-plus-carbon.html",
 				IMAGES_PATH + "pd_aerobar_t4_carbon_black_angle_RHCT41.jpg","An ergonomic ski-bend that places the rider in a low profile racing position. With 8 points of adjustment, the J4 Bracket on our T+ Carbon models fine-tunes to the millimeter to optimize the aero position.  The range of stack goes from 60mm to 95mm to the armrest using our Aerobar Bracket Riser Kit.",
 				"Gloss Carbon or White", "Forged 6061-T6 AL brackets", "F-35 adjustable armrest", "Forged 6061-T6 AL brackets", "600 grams");
@@ -135,6 +152,149 @@ public class Generate {
 	}
 
 	
+	boolean isT1Plus;
+	boolean isT2Plus;
+	boolean isT3Plus;
+	boolean isT4Plus;
+	boolean isT1Carbon;
+	boolean isT2Carbon;
+	boolean isT3Carbon;
+	boolean isT4Carbon;
+	boolean isAeria;
+	boolean showAeriaConfigs;
+	
+	private void generate(){
+		
+		for(Product product : products){
+			
+
+			
+
+			recurseProduct(product);
+
+		}
+		
+	}
+	
+	private void recurseProduct(Product product){
+	
+		Log.i("PRODUCTTYPE", product.getClass().getSimpleName());
+		
+		if(product instanceof T1Plus && !isT1Plus){
+			addLine();
+			isT1Plus = true;
+			t1Plus();
+		}
+		else if(product instanceof T2Plus && !isT2Plus){
+			addLine();
+			isT2Plus = true;
+			t2Plus();
+		}
+		else if(product instanceof T3Plus && !isT3Plus){
+			addLine();
+			isT3Plus = true;
+			t3Plus();
+		}
+		else if(product instanceof T4Plus && !isT4Plus){
+			addLine();
+			isT4Plus = true;
+			t4Plus();
+		}
+		else if(product instanceof T1Carbon && !isT1Carbon){
+			addLine();
+			isT1Carbon = true;
+			t1Carbon();
+		}
+		else if(product instanceof T2Carbon && !isT2Carbon){
+			addLine();
+			isT2Carbon = true;
+			t2Carbon();
+		}
+		else if(product instanceof T3Carbon && !isT3Carbon){
+			addLine();
+			isT3Carbon = true;
+			t3Carbon();
+		}
+		else if(product instanceof T4Carbon && !isT4Carbon){
+			addLine();
+			isT4Carbon = true;
+			t4Carbon();
+		}else if(product instanceof Aeria && !isAeria){
+			addLine();
+			isAeria = true;
+			//isT1Plus = true;
+			isT2Plus = true;
+			//isT3Plus = true;
+			isT4Plus = true;
+			isT1Carbon = true;
+			isT2Carbon = true;
+			isT3Carbon = true;
+			isT4Carbon = true;
+			aeria();
+		}
+		else{
+			if(!(product.getClass().getSimpleName().equals("Product"))){
+				
+				
+				if(isAeria){
+					
+					//isT1Plus = true;
+					isT2Plus = true;
+					//isT3Plus = true;
+					isT4Plus = true;
+					isT1Carbon = true;
+					isT2Carbon = true;
+					isT3Carbon = true;
+					isT4Carbon = true;
+					
+					if(isT1Plus && isT3Plus){
+						
+						//don't generate
+						
+					}else{
+						generateOptions(product);	
+					}
+					
+
+				}else{
+				
+					generateOptions(product);	
+				}
+			}
+
+		}
+		
+		if(product.getProduct() != null ){
+
+			recurseProduct(product.getProduct());
+		
+		}
+		
+
+
+	}
+	
+	private void addLine(){
+		
+		LinearLayout bottomLine =  new LinearLayout(context);
+		LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 1);
+		params.topMargin = 6;
+		bottomLine.setPadding(0, 6, 0, 0);
+		bottomLine.setLayoutParams(params);
+		bottomLine.setBackgroundColor(Color.LTGRAY);
+
+		productContainer.addView(bottomLine);
+	}
+	
+	
+	private void generateOptions(Product product){
+		TextView textView = new TextView(context);
+		textView.setTextColor(Color.WHITE);
+		textView.setText(product.getDescription());
+		productContainer.addView(textView);
+	}
+	
+
 	
 //	private void evaluate(){	
 //		

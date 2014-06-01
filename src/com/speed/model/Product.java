@@ -6,8 +6,9 @@ import java.util.ArrayList;
 public class Product implements Serializable {
 	
 	private Product product;
-	private String description = "";
-	
+//	private String description = "";
+//	//private ArrayList<Product> products;
+//	
 	public Product(){
 		
 	}
@@ -22,31 +23,32 @@ public class Product implements Serializable {
 
 	
 	public String getDescription(){
-		return this.description;
+		return null;
+		//return this.description;
 	}
 	
-	public void setDescription(String description){
-		this.description += " " + description;
-	}
-	
-	public String getDescriptionRecursive(){
-		return getDescription() + recursiveDescription(getProduct());
-	}
-	
-	private String recursiveDescription(Product product){
-
-		//description += product.getDescription();
-		
-		String desc = "";
-		
-		if(product.getProduct() != null){
-			desc = product.getDescription();
-			desc += recursiveDescription(product.getProduct());
-			
-			
-		}
-		
-		return desc;
-	}
+//	public void setDescription(String description){
+//		this.description += " " + description;
+//	}
+//	
+//	public String getDescriptionRecursive(){
+//		return recursiveDescription(getProduct());
+//	}
+//	
+//	private String recursiveDescription(Product product){
+//
+//		//description += product.getDescription();
+//		
+//		String desc = "";
+//		
+//		if(product.getProduct() != null){
+//			desc += product.getDescription();
+//			recursiveDescription(product.getProduct());
+//			
+//			
+//		}
+//		
+//		return desc;
+//	}
 
 }

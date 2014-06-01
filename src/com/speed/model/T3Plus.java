@@ -1,10 +1,11 @@
 package com.speed.model;
 
-public class J2 extends Product{
+public class T3Plus extends Product{
 	
-	private String description = "J2 Bracket";
 
-	public J2(Product product){
+	private String description = "T3 Plus";
+
+	public T3Plus(Product product){
 		super(product);
 	}
 

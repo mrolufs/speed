@@ -24,6 +24,8 @@ import com.speed.model.T1Carbon;
 
 public class ResultsActivity extends Activity {
 	
+	AppContext appContext;
+
 	int reach;
 	int stack;
 	
@@ -41,18 +43,20 @@ public class ResultsActivity extends Activity {
 		
 		setContentView(R.layout.activity_results);
 		
+		appContext = (AppContext) getApplicationContext();
+		
 		productContainer = (LinearLayout) findViewById(R.id.container);
 		
 		Bundle b = getIntent().getExtras();
 		
-		stack = b.getInt("aerobarStack");
-		reach = b.getInt("aerobarReach");
+		stack = appContext.getStack();//b.getInt("aerobarStack");
+		reach = appContext.getReach();//b.getInt("aerobarReach");
 		
 		((TextView)findViewById(R.id.aerobar_stack_result)).setText(String.valueOf(stack));
 		((TextView)findViewById(R.id.aerobar_reach_result)).setText(String.valueOf(reach));
 		
 		
-		//new Generate(this, productContainer, stack, reach);
+		new Generate(this, productContainer, stack, reach);
 		
 	}
 

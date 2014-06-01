@@ -125,149 +125,20 @@
 			    android:paddingLeft="15dp">
 	
 			    
-			    <LinearLayout 
-			        android:id="@+id/bike_frame_stack"
-			        android:layout_width="match_parent"
-			        android:layout_height="wrap_content"
-			        android:orientation="vertical"
-			        android:layout_marginTop="20dp"
-					>
-			        
-			            <TextView
-			        android:id="@+id/bike_frame_stack_title"
-			        android:layout_width="match_parent"
-			        android:layout_height="wrap_content"
-			        android:text="Bike Frame Stack"
-			        android:textSize="22dp"
-			        android:textColor="@color/white"/>
-			            
-			  		<EditText
-				  		android:id="@+id/bike_frame_stack_edit"
-				        android:layout_width="match_parent"
-				        android:layout_height="wrap_content"
-				        android:text=""
-				        android:maxLength="3"
-				        android:inputType="number"
-				        android:textColor="@color/white"
-				        android:clickable="true"
-			        	
-				        />
-			  		
-			  		<!-- android:onClick="showBikeStackPicker" -->
-			        
-	  		   		<!-- NumberPicker android:id="@+id/np_bike_stack"
-					   android:layout_width="wrap_content"
-					   android:layout_height="wrap_content"
-					   android:
-					   android:width="100dip"/-->
-			        
-			        
-			    </LinearLayout>
-			    
-			        <LinearLayout 
-			        android:id="@+id/bike_frame_reach"
-			        android:layout_width="match_parent"
-			        android:layout_height="wrap_content"
-			        android:orientation="vertical"
-			        android:layout_marginTop="20dp">
-			        
-			            <TextView
-			        android:id="@+id/bike_frame_reach_title"
-			        android:layout_width="match_parent"
-			        android:layout_height="wrap_content"
-			        android:text="Bike Frame Reach"
-			        android:textSize="22dp"
-			        android:textColor="@color/white"/>
-			            
-			  		<EditText
-				  		android:id="@+id/bike_frame_reach_edit"
-				        android:layout_width="match_parent"
-				        android:layout_height="wrap_content"
-				        android:text=""
-				        android:maxLength="3"
-				        android:inputType="number"
-				        android:textColor="@color/white"
-				        android:clickable="true"
-			        	
-				        />
-			  		
-			  		<!-- android:onClick="showBikeReachPicker" -->
-			        
-			        
-			        
-			    </LinearLayout>
-			      
-			        <LinearLayout 
-			        android:id="@+id/fit_stack"
-			        android:layout_width="match_parent"
-			        android:layout_height="wrap_content"
-			        android:orientation="vertical"
-			        android:layout_marginTop="20dp">
-			        
-			            <TextView
-			        android:id="@+id/fit_stack_title"
-			        android:layout_width="match_parent"
-			        android:layout_height="wrap_content"
-			        android:text="Armrest Stack"
-			        android:textSize="22dp"
-			        android:textColor="@color/white"/>
-			            
-			  		<EditText
-				  		android:id="@+id/fit_stack_edit"
-				        android:layout_width="match_parent"
-				        android:layout_height="wrap_content"
-				        android:text=""
-				        android:maxLength="3"
-				        android:inputType="number"
-				        android:textColor="@color/white"
-				        />
-			        
-			        
-			        
-			    </LinearLayout>
+
 			    
 			    <LinearLayout 
-			        android:id="@+id/fit_reach"
+			        android:id="@+id/type_of_riding"
 			        android:layout_width="match_parent"
 			        android:layout_height="wrap_content"
 			        android:orientation="vertical"
 			        android:layout_marginTop="20dp">
 			        
 			        <TextView
-			        android:id="@+id/fit_reach_title"
+			        android:id="@+id/type_of_riding_title"
 			        android:layout_width="match_parent"
 			        android:layout_height="wrap_content"
-			        android:text="Armrest Reach"
-			        android:textSize="22dp"
-			        android:textColor="@color/white"/>
-			            
-			  		<EditText
-				  		android:id="@+id/fit_reach_edit"
-				        android:layout_width="match_parent"
-				        android:layout_height="wrap_content"
-				        android:text=""
-				        android:maxLength="3"
-				        android:inputType="number"
-				        android:textColor="@color/white"
-				        />
-			        
-			        
-			        
-			    </LinearLayout> 
-			    
-			    
-			    <LinearLayout 
-			        android:id="@+id/stem_angle"
-			        android:layout_width="match_parent"
-			        android:layout_height="wrap_content"
-			        android:orientation="vertical"
-			        android:layout_marginTop="20dp">
-			        
-			        <TextView
-			        android:id="@+id/stem_angle_title"
-			        android:layout_width="match_parent"
-			        android:layout_height="wrap_content"
-			        android:text="Stem Angle"
+			        android:text="Type of Riding?"
 			        android:textSize="22dp"
 			        android:textColor="@color/white"/>
 			            
@@ -280,116 +151,91 @@
 				        /-->
 				        
 				    <Spinner
-				  		android:id="@+id/stem_angle_spinner"
+				  		android:id="@+id/type_of_riding_spinner"
 				        android:layout_width="match_parent"
 				        android:layout_height="wrap_content"
 				        android:textColor="@color/white"
-				        android:spinnerMode="dialog"
+				        android:spinnerMode="dropdown"
+				        
 				        />
 			        
 			        
 			        
 			    </LinearLayout>  
+
 			    
-			    
-			    <LinearLayout 
-			        android:id="@+id/stem_length"
+			   <LinearLayout 
+			        android:id="@+id/type_of_triathlon_course"
 			        android:layout_width="match_parent"
 			        android:layout_height="wrap_content"
 			        android:orientation="vertical"
-			        android:layout_marginTop="20dp">
+			        android:layout_marginTop="20dp"
+			        android:visibility="gone">
 			        
 			        <TextView
-			        android:id="@+id/stem_length_title"
+			        android:id="@+id/type_of_hand_position_title"
 			        android:layout_width="match_parent"
 			        android:layout_height="wrap_content"
-			        android:text="Stem Length"
+			        android:text="Type of triathlon course?"
 			        android:textSize="22dp"
 			        android:textColor="@color/white"/>
 			            
-			  		<Spinner
-				  		android:id="@+id/stem_length_spinner"
+			  		<!-- EditText
+				  		android:id="@+id/stem_angle_edit"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:text=""
+				        android:textColor="@color/white"
+				        /-->
+				        
+				    <Spinner
+				  		android:id="@+id/type_of_triathlon_course_spinner"
 				        android:layout_width="match_parent"
 				        android:layout_height="wrap_content"
 				        android:textColor="@color/white"
-				        android:spinnerMode="dialog"
+				        android:spinnerMode="dropdown"
 				        />
-			        
-
-			        
-			        
+     
 			    </LinearLayout> 
 			    
 			    
-			    <LinearLayout 
-			        android:id="@+id/spacers_container"
-			        android:layout_width="match_parent"
-			        android:layout_height="wrap_content"
-			        android:orientation="vertical"
-			        android:layout_marginTop="20dp">
-			        
-			        <TextView
-			        android:id="@+id/spacers_title"
-			        android:layout_width="match_parent"
-			        android:layout_height="wrap_content"
-			        android:text="Spacers (mm)"
-			        android:textSize="22dp"
-			        android:textColor="@color/white"/>
-			            
-			  		<!-- EditText
-				  		android:id="@+id/spacers_edit"
-				        android:layout_width="match_parent"
-				        android:layout_height="wrap_content"
-				        android:text="0"
-				        android:textColor="@color/white"
-				        /-->
-				        
-				    <Spinner
-				  		android:id="@+id/spacers_spinner"
-				        android:layout_width="match_parent"
-				        android:layout_height="wrap_content"
-				        android:textColor="@color/white"
-				        android:spinnerMode="dialog"
-				        />
-			        
-			        
-			        
-			    </LinearLayout>  
 			    
 			    <LinearLayout 
-			        android:id="@+id/headset_container"
+			        android:id="@+id/type_of_hand_position"
 			        android:layout_width="match_parent"
 			        android:layout_height="wrap_content"
 			        android:orientation="vertical"
-			        android:layout_marginTop="20dp">
+			        android:layout_marginTop="20dp"
+			        android:visibility="visible">
 			        
 			        <TextView
-			        android:id="@+id/headset_title"
+			        android:id="@+id/type_of_hand_position_title"
 			        android:layout_width="match_parent"
 			        android:layout_height="wrap_content"
-			        android:text="Headset Cap (mm)"
+			        android:text="Change positions frequently?"
 			        android:textSize="22dp"
 			        android:textColor="@color/white"/>
 			            
 			  		<!-- EditText
-				  		android:id="@+id/spacers_edit"
+				  		android:id="@+id/stem_angle_edit"
 				        android:layout_width="match_parent"
 				        android:layout_height="wrap_content"
-				        android:text="0"
+				        android:text=""
 				        android:textColor="@color/white"
 				        /-->
 				        
 				    <Spinner
-				  		android:id="@+id/headset_spinner"
+				  		android:id="@+id/type_of_hand_position_spinner"
 				        android:layout_width="match_parent"
 				        android:layout_height="wrap_content"
 				        android:textColor="@color/white"
 				        android:spinnerMode="dialog"
 				        />
-			        
-			        
-			        
-			    </LinearLayout>
+     
+			    </LinearLayout>  
+			    
+			    
+
 			    
 			    <Button 
 			            
@@ -398,7 +244,8 @@
 			        android:layout_height="wrap_content"
 			        android:onClick="submitClickHandler"
 			        android:text="Submit"
-			        android:layout_marginTop="20dp"/>
+			        android:layout_marginTop="20dp"
+			        android:visibility="visible"/>
 			    
 			    </LinearLayout>
 	        
