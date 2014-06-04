@@ -230,6 +230,7 @@ public class Generate {
 			isT2Carbon = true;
 			isT3Carbon = true;
 			isT4Carbon = true;
+			
 			aeria();
 		}
 		else{
@@ -238,14 +239,6 @@ public class Generate {
 				
 				if(isAeria){
 					
-					//isT1Plus = true;
-					isT2Plus = true;
-					//isT3Plus = true;
-					isT4Plus = true;
-					isT1Carbon = true;
-					isT2Carbon = true;
-					isT3Carbon = true;
-					isT4Carbon = true;
 					
 					if(isT1Plus && isT3Plus){
 						
