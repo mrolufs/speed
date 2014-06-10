@@ -2,7 +2,7 @@ package com.speed.model;
 
 public class PosRear extends Product{
 	
-	private String description = "Rear Position";
+	private String description = "Rear";
 
 	public PosRear(Product product){
 		super(product);

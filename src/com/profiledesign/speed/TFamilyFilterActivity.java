@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
@@ -76,6 +78,13 @@ public class TFamilyFilterActivity extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		
+		//Remove title bar
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+		//Remove notification bar
+		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		
 		
 		setContentView(R.layout.activity_tfamilyfilter);
 		
@@ -165,6 +174,30 @@ public class TFamilyFilterActivity extends Activity{
 //		tFamilyFilter();
 		
 //		reconcileTs();
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		super.onActivityResult(requestCode, resultCode, data);
+		
+		
+		if(resultCode == 1000){
+			reEvaluateOnBack();
+		}
+		
+		
+	}
+	
+	private void reEvaluateOnBack(){
+		
+		ArrayList<Product> products = appContext.getProducts();
+		products.clear();
+	
+		Evaluate evaluator = new Evaluate(this);
+		
+		evaluator.evaluate(appContext.getStack(), appContext.getReach());
+		
 	}
 	
 	private ArrayList<String> filteredTs;
@@ -273,7 +306,7 @@ public class TFamilyFilterActivity extends Activity{
 		
 		Intent intent = new Intent(this, ResultsActivity.class);
 
-		startActivity(intent);
+		startActivityForResult(intent, 1000);
 		
 		Log.i("RIDINGTYPE", "type: " + ridingType);
 		

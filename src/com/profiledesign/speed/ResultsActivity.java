@@ -58,6 +58,24 @@ public class ResultsActivity extends Activity {
 		
 		new Generate(this, productContainer, stack, reach);
 		
+		setResult(1000);
+		
+	}
+	
+	@Override
+	protected void onDestroy() {
+		
+		super.onDestroy();
+		
+		
+	}
+	
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		
+		//setResult(1000);
 	}
 
 	

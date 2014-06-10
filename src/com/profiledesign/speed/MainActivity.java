@@ -1,5 +1,9 @@
 package com.profiledesign.speed;
 
+import java.util.ArrayList;
+
+import com.speed.model.Product;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -339,6 +343,9 @@ Headset Cap: 5
 		
 		if(results != null){
 			
+			ArrayList<Product> products = appContext.getProducts();
+			products.clear();
+			
 			appContext.setStack(results.getAerobarStack());
 			appContext.setReach(results.getAerobarReach());
 			
@@ -377,7 +384,8 @@ Headset Cap: 5
 //			headset = (Integer) spinnerHeadsetCap.getSelectedItem();
 			
 			/*  ZBS Series */
-//			
+			
+			
 //			bikeStack = 600;//Integer.parseInt(((EditText) findViewById(R.id.bike_frame_stack_edit)).getText().toString());
 //			bikeReach = 407;//Integer.parseInt(((EditText) findViewById(R.id.bike_frame_reach_edit)).getText().toString());
 //			fitStack = 700;//Integer.parseInt(((EditText) findViewById(R.id.fit_stack_edit)).getText().toString());
@@ -414,7 +422,7 @@ Headset Cap: 5
 
 			
 //			bikeStack = 545;//Integer.parseInt(((EditText) findViewById(R.id.bike_frame_stack_edit)).getText().toString());
-//			bikeReach = 405;//Integer.parseInt(((EditText) findViewById(R.id.bike_frame_reach_edit)).getText().toString());
+//			bikeReach = 395;//Integer.parseInt(((EditText) findViewById(R.id.bike_frame_reach_edit)).getText().toString());
 //			fitStack = 665;//Integer.parseInt(((EditText) findViewById(R.id.fit_stack_edit)).getText().toString());
 //			fitReach = 455;//Integer.parseInt(((EditText) findViewById(R.id.fit_reach_edit)).getText().toString());
 //			stemAngle = -17;//(Integer) spinnerStemAngle.getSelectedItem();//Integer.parseInt(((EditText) findViewById(R.id.stem_angle_edit)).getText().toString());

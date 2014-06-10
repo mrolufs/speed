@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +29,7 @@ import com.speed.model.T3Carbon;
 import com.speed.model.T3Plus;
 import com.speed.model.T4Carbon;
 import com.speed.model.T4Plus;
+import com.speed.model.ZBS;
 
 public class Generate {
 	
@@ -66,55 +68,55 @@ public class Generate {
 		generateProduct("Aeria", PRODUCT_PATH + CARBON_AEROBARS_PATH,
 				IMAGES_PATH + "pd_aeria_front.jpg",
 				"The most advanced integrate aerobar system within the Profile Design line. A patent-pending bracket system simultaneously clamps the extensions while attaching the brackets to the wing. The elegant design of the Aeria makes for ease of adjustment, and a smaller profile in the wind.  The range of stack goes from 55mm to 135mm to the armrest.",
-				"Gloss UD Carbon", "Forged 6061-T6 AL, High-Modulus Carbon Fiber Wing", "F-25", "UD Carbon Fiber", "663 grams");
+				"Gloss UD Carbon", "Forged 6061-T6 AL, High-Modulus Carbon Fiber Wing", "F-35", "UD Carbon Fiber", "663 grams");
 	}
 	
 	private void t1Carbon(){
-		generateProduct("T1 Plus Carbon", PRODUCT_PATH + CARBON_AEROBARS_PATH + "t1-plus-viper.html",
+		generateProduct("T1+ Carbon", PRODUCT_PATH + CARBON_AEROBARS_PATH + "t1-plus-viper.html",
 				IMAGES_PATH + "pd_aerobar_t1_viper_black_angle_RHCVT11.jpg",
 				"The original ergonomic extension bend provides multiple hand positions while aero. With 8 points of adjustment, the J4 Bracket on our T+ Carbon models fine-tunes to the millimeter to optimize the aero position.  The range of stack goes from 60mm to 95mm to the armrest using our Aerobar Bracket Riser Kit. ",
 				"Gloss UD Carbon or White", "Forged 6061-T6 AL brackets", "F-35 adjustable armrest", "Forged 6061-T6 AL brackets", "590 grams");
 	}
 	
 	private void t2Carbon(){
-		generateProduct("T2 Plus Carbon", PRODUCT_PATH + CARBON_AEROBARS_PATH + "t2-plus-carbon.html",
+		generateProduct("T2+ Carbon", PRODUCT_PATH + CARBON_AEROBARS_PATH + "t2-plus-carbon.html",
 				IMAGES_PATH + "pd_aerobar_t2_carbon_black_angle_RHCT21.jpg","The T2+ allows for the most aggressive, low profile position within the T+ Carbon Series. With 8 points of adjustment, the J4 Bracket on our T+ Carbon models fine-tunes to the millimeter to optimize the aero position.  The range of stack goes from 60mm to 95mm to the armrest using our Aerobar Bracket Riser Kit.",
 				"Gloss UD Carbon or White", "Forged 6061-T6 AL brackets", "F-35 adjustable armrest", "Forged 6061-T6 AL brackets", "584 grams");
 	}
 	
 	private void t3Carbon(){
-		generateProduct("T3 Plus Carbon", PRODUCT_PATH + CARBON_AEROBARS_PATH + "t3-plus-carbon.html",
+		generateProduct("T3+ Carbon", PRODUCT_PATH + CARBON_AEROBARS_PATH + "t3-plus-carbon.html",
 				IMAGES_PATH + "pd_aerobar_t3_carbon_black_angle_RHCT31.jpg","The low profile, ergonomic bend of the T3+ keeps wrists in a neutral, more natural position while aero. With 8 points of adjustment, the J4 Bracket on our T+ Carbon models fine-tunes to the millimeter to optimize the aero position.  The range of stack goes from 60mm to 95mm to the armrest using our Aerobar Bracket Riser Kit.",
 				"Gloss UD Carbon or White", "Forged 6061-T6 AL brackets", "F-35 adjustable armrest", "Forged 6061-T6 AL brackets", "620 grams");
 	}
 	
 	private void t4Carbon(){
-		generateProduct("T4 Plus Carbon", PRODUCT_PATH + CARBON_AEROBARS_PATH + "t4-plus-carbon.html",
+		generateProduct("T4+ Carbon", PRODUCT_PATH + CARBON_AEROBARS_PATH + "t4-plus-carbon.html",
 				IMAGES_PATH + "pd_aerobar_t4_carbon_black_angle_RHCT41.jpg","An ergonomic ski-bend that places the rider in a low profile racing position. With 8 points of adjustment, the J4 Bracket on our T+ Carbon models fine-tunes to the millimeter to optimize the aero position.  The range of stack goes from 60mm to 95mm to the armrest using our Aerobar Bracket Riser Kit.",
 				"Gloss Carbon or White", "Forged 6061-T6 AL brackets", "F-35 adjustable armrest", "Forged 6061-T6 AL brackets", "600 grams");
 		
 	}
 	
 	private void t1Plus(){
-		generateProduct("T1 Plus", PRODUCT_PATH + ALUMINUM_AEROBARS_PATH + "t1-plus.html",
+		generateProduct("T1+ Aluminum",  PRODUCT_PATH + ALUMINUM_AEROBARS_PATH + "t1-plus.html",
 				IMAGES_PATH + "pd_aerobar_t1_alloy_angle.jpg","The original extension bend provides multiple hand positions while aero. The accompanying J2 Bracket, isolated from the basebar bracket, allows for a wide range of armrest adjustment possibilities. The range of stack goes from 60mm to 95mm to the armrest using our Aerobar Bracket Riser Kit.",
 				"Anodized Matte Black", "Forged 6061-T6 AL", "F-19 injection molded", "Forged 6061-T6 AL", "545 grams");		
 	}
 
 	private void t2Plus(){
-		generateProduct("T2 Plus", PRODUCT_PATH + ALUMINUM_AEROBARS_PATH + "t2-plus.html",
+		generateProduct("T2+ Aluminum",  PRODUCT_PATH + ALUMINUM_AEROBARS_PATH + "t2-plus.html",
 				IMAGES_PATH + "pd_aerobar_t2_alloy_angle.jpg","The T2+ allows for the most aggressive, low profile position within the T+ Aluminum Series. The accompanying J2 Bracket, isolated from the basebar bracket, allows for a wide range of armrest adjustment possibilities. The range of stack goes from 60mm to 95mm to the armrest using our Aerobar Bracket Riser Kit.",
 				"Anodized Matte Black", "Forged 6061-T6 AL", "F-19 injection molded", "Forged 6061-T6 AL", "500 grams");
 	}
 	
 	private void t3Plus(){
-		generateProduct("T3 Plus", PRODUCT_PATH + ALUMINUM_AEROBARS_PATH + "t3-plus.html",
+		generateProduct("T3+ Aluminum",  PRODUCT_PATH + ALUMINUM_AEROBARS_PATH + "t3-plus.html",
 				IMAGES_PATH + "pd_aerobar_t3plus_angle_1.jpg","The low profile, ergonomic bend of the T3+ keeps wrists in a neutral, more natural position while aero. The accompanying J2 Bracket, isolated from the basebar bracket, allows for a wide range of armrest adjustment possibilities. The range of stack goes from 60mm to 95mm to the armrest using our Aerobar Bracket Riser Kit.",
 				"Anodized Matte Black", "Forged 6061-T6 AL", "F-19 injection molded", "Forged 6061-T6 AL", "530 grams");
 	}
 
 	private void t4Plus(){
-		generateProduct("T4 Plus", PRODUCT_PATH + ALUMINUM_AEROBARS_PATH,
+		generateProduct("T4+ Aluminum",  PRODUCT_PATH + ALUMINUM_AEROBARS_PATH,
 				IMAGES_PATH + "t4_alloy_front.jpg","A ski-bend that places the rider in a low profile racing position. The accompanying J2 Bracket, isolated from the basebar bracket, allows for a wide range of armrest adjustment possibilities. The range of stack goes from 60mm to 95mm to the armrest using our Aerobar Bracket Riser Kit.",
 				"Anodized Matte Black", "Forged 6061-T6 AL", "F-19 injection molded", "Forged 6061-T6 AL", "469 grams");
 	}
@@ -161,6 +163,7 @@ public class Generate {
 	boolean isT3Carbon;
 	boolean isT4Carbon;
 	boolean isAeria;
+	boolean isZBS;
 	boolean showAeriaConfigs;
 	
 	private void generate(){
@@ -181,46 +184,54 @@ public class Generate {
 		Log.i("PRODUCTTYPE", product.getClass().getSimpleName());
 		
 		if(product instanceof T1Plus && !isT1Plus){
-			addLine();
+			//addLine();
 			isT1Plus = true;
 			t1Plus();
+			optionalConfigurations();
 		}
 		else if(product instanceof T2Plus && !isT2Plus){
-			addLine();
+			//addLine();
 			isT2Plus = true;
 			t2Plus();
+			optionalConfigurations();
 		}
 		else if(product instanceof T3Plus && !isT3Plus){
-			addLine();
+			//addLine();
 			isT3Plus = true;
 			t3Plus();
+			optionalConfigurations();
 		}
 		else if(product instanceof T4Plus && !isT4Plus){
-			addLine();
+			//addLine();
 			isT4Plus = true;
 			t4Plus();
+			optionalConfigurations();
 		}
 		else if(product instanceof T1Carbon && !isT1Carbon){
 			addLine();
 			isT1Carbon = true;
 			t1Carbon();
+			optionalConfigurations();
 		}
 		else if(product instanceof T2Carbon && !isT2Carbon){
-			addLine();
+			//addLine();
 			isT2Carbon = true;
 			t2Carbon();
+			optionalConfigurations();
 		}
 		else if(product instanceof T3Carbon && !isT3Carbon){
-			addLine();
+			//addLine();
 			isT3Carbon = true;
 			t3Carbon();
+			optionalConfigurations();
 		}
 		else if(product instanceof T4Carbon && !isT4Carbon){
-			addLine();
+			//addLine();
 			isT4Carbon = true;
 			t4Carbon();
+			optionalConfigurations();
 		}else if(product instanceof Aeria && !isAeria){
-			addLine();
+			//addLine();
 			isAeria = true;
 			//isT1Plus = true;
 			isT2Plus = true;
@@ -232,6 +243,16 @@ public class Generate {
 			isT4Carbon = true;
 			
 			aeria();
+			
+			if(!isT1Plus && !isT3Plus){
+				optionalConfigurations();
+			}
+			
+		}else if(product instanceof ZBS && !isZBS){
+			//addLine();
+			isZBS = true;
+			zbsSBend();
+			optionalConfigurations();
 		}
 		else{
 			if(!(product.getClass().getSimpleName().equals("Product"))){
@@ -245,7 +266,10 @@ public class Generate {
 						//don't generate
 						
 					}else{
-						generateOptions(product);	
+						
+						if(!(product.getClass().getSimpleName().equals("Aeria"))){
+							generateOptions(product);
+						}
 					}
 					
 
@@ -253,6 +277,12 @@ public class Generate {
 				
 					generateOptions(product);	
 				}
+			}
+			else if((product.getClass().getSimpleName().equals("Product"))){
+				
+
+					addLine();
+
 			}
 
 		}
@@ -267,7 +297,19 @@ public class Generate {
 
 	}
 	
+	
+	private void optionalConfigurations(){
+		
+		TextView textView = new TextView(context);
+		textView.setText("Alternate Configurations:");
+		textView.setTextColor(Color.RED);
+
+		productContainer.addView(textView);
+	}
+	
 	private void addLine(){
+		
+		positionTemp = "";
 		
 		LinearLayout bottomLine =  new LinearLayout(context);
 		LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 1);
@@ -279,12 +321,133 @@ public class Generate {
 		productContainer.addView(bottomLine);
 	}
 	
+	private void addRedLine(){
+		
+		LinearLayout bottomLine =  new LinearLayout(context);
+		LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 1);
+		params.topMargin = 6;
+		bottomLine.setPadding(0, 6, 0, 0);
+		bottomLine.setLayoutParams(params);
+		bottomLine.setBackgroundColor(Color.RED);
+
+		productContainer.addView(bottomLine);
+	}
+	
+	private String positionTemp;
 	
 	private void generateOptions(Product product){
+		
+		Log.i("OPTIONS", product.getDescription());
+		
+		String append = "";
+		
+		if(product.getClass().getSimpleName().equals("F19")
+			||product.getClass().getSimpleName().equals("F25")
+			||product.getClass().getSimpleName().equals("F35")
+			||product.getClass().getSimpleName().equals("J2")
+			||product.getClass().getSimpleName().equals("J4")
+			||product.getClass().getSimpleName().equals("Flipped")
+			
+			
+			|| (isAeria &&
+					(product.getClass().getSimpleName().equals("T1Plus")
+							||product.getClass().getSimpleName().equals("T2Plus")
+							||product.getClass().getSimpleName().equals("T3Plus")
+							||product.getClass().getSimpleName().equals("T4Plus")
+							||product.getClass().getSimpleName().equals("T1Carbon")
+							||product.getClass().getSimpleName().equals("T2Carbon")
+							||product.getClass().getSimpleName().equals("T3Carbon")
+							||product.getClass().getSimpleName().equals("T4Carbon")
+							
+							)
+					
+					)
+			
+			
+
+				){
+			
+			append = "with";
+		
+		}
+		
+
+		
+//		else if(product.getClass().getSimpleName().equals("PosFront")
+//				||product.getClass().getSimpleName().equals("PosMiddle")
+//				||product.getClass().getSimpleName().equals("PosRear")
+//
+//					){
+//				
+//				append = "in";
+//				
+//				
+//			
+//			}
+//		
+//
+//		
+		if(TextUtils.isEmpty(positionTemp)  && (product.getClass().getSimpleName().equals("PosFront")
+				|| product.getClass().getSimpleName().equals("PosMiddle")
+				|| product.getClass().getSimpleName().equals("PosRear"))){
+				
+				positionTemp = product.getDescription();
+				
+
+				TextView textPositionTemp = new TextView(context);
+				textPositionTemp.setTextColor(Color.WHITE);
+				textPositionTemp.setText("in " + positionTemp +  " Position");
+				productContainer.addView(textPositionTemp);
+				
+				return;
+			
+		}	
+		else if(!TextUtils.isEmpty(positionTemp)  && (!product.getClass().getSimpleName().equals("PosFront")
+				&& !product.getClass().getSimpleName().equals("PosMiddle")
+				&& !product.getClass().getSimpleName().equals("PosRear"))){
+			
+//			TextView textPositionTemp = new TextView(context);
+//			textPositionTemp.setTextColor(Color.WHITE);
+//			textPositionTemp.setText("in " + positionTemp +  " Position");
+//			productContainer.addView(textPositionTemp);
+			
+//			TextView textView = new TextView(context);
+//			textView.setTextColor(Color.WHITE);
+//			textView.setText((!TextUtils.isEmpty(append)? append + " " : "") + product.getDescription());
+//			
+//			productContainer.addView(textView);
+
+			
+			positionTemp = "";
+			
+			
+		}else if(!TextUtils.isEmpty(positionTemp)  && (product.getClass().getSimpleName().equals("PosFront")
+				|| product.getClass().getSimpleName().equals("PosMiddle")
+				|| product.getClass().getSimpleName().equals("PosRear"))){
+			
+			TextView textPositionTemp = new TextView(context);
+			textPositionTemp.setTextColor(Color.WHITE);
+			textPositionTemp.setText("in " + positionTemp + " " + product.getDescription() + " Position");
+			
+			productContainer.removeViewAt(productContainer.getChildCount() - 1);
+			
+			productContainer.addView(textPositionTemp);
+			
+			positionTemp = "";
+			
+			return;
+
+		}
+		
+
 		TextView textView = new TextView(context);
 		textView.setTextColor(Color.WHITE);
-		textView.setText(product.getDescription());
+		textView.setText((!TextUtils.isEmpty(append)? append + " " : "") + product.getDescription());
+		
 		productContainer.addView(textView);
+
+		
+	
 	}
 	
 
